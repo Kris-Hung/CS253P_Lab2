@@ -4,7 +4,8 @@
 using namespace std;
 
 
-bool isSubStr(string s1, string s2) { // s2 is the long one
+bool isSubStr(string s1, string s2) { 
+	if (s1 == s2) { return false; }
 	signed int size1 = s1.size(), size2 = s2.size();
 	for (int i = 0; i < size2 - size1; i++) {
 		if (s1 == s2.substr(i, s1.size())) {
@@ -21,7 +22,7 @@ void contain(vector<string> & input) {
 	cout << "----------------" << endl;
 	for(int i =0; i < inputSize; i++) {
 		cout << input.at(i) << ": ";
-		for (int j = i+1; j < inputSize; j++) {
+		for (int j = 0; j < inputSize; j++) {
 			if (isSubStr(input.at(i), input[j])) {
 				cout << input[j] << ", ";
 			}
@@ -32,6 +33,9 @@ void contain(vector<string> & input) {
 
 
 int main(int argc, char const *argv[]){
+	if (argc != 2) {
+		cout << "Need a input to represent the number of input strings." << endl;
+	}
 	vector<string> input;
 	string str;
 	cout << "Input your strings: " << endl;
