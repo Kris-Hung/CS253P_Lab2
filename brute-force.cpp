@@ -13,7 +13,7 @@ bool isSubStr(string s1, string s2) {
 		}
 	} 
 	return false;
-	}
+}
 
 
 
@@ -35,6 +35,7 @@ void contain(vector<string> & input) {
 int main(int argc, char const *argv[]){
 	if (argc != 2) {
 		cout << "Need a input to represent the number of input strings." << endl;
+		return 0;
 	}
 	vector<string> input;
 	string str;
